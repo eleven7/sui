@@ -339,8 +339,8 @@ pub trait EventStore {
     /// transaction, sorted in time order defined by the [descending] parameter.
     async fn events_by_transaction(
         &self,
-        cursor: EventID,
         digest: TransactionDigest,
+        cursor: EventID,
         limit: usize,
         descending: bool,
     ) -> Result<Vec<StoredEvent>, SuiError>;
@@ -350,8 +350,8 @@ pub trait EventStore {
     /// sorted in time order defined by the [descending] parameter.
     async fn events_by_type(
         &self,
-        cursor: EventID,
         event_type: EventType,
+        cursor: EventID,
         limit: usize,
         descending: bool,
     ) -> Result<Vec<StoredEvent>, SuiError>;
@@ -360,8 +360,8 @@ pub trait EventStore {
     /// sorted in time order defined by the [descending] parameter.
     async fn events_by_module_id(
         &self,
-        cursor: EventID,
         module: &ModuleId,
+        cursor: EventID,
         limit: usize,
         descending: bool,
     ) -> Result<Vec<StoredEvent>, SuiError>;
@@ -371,8 +371,8 @@ pub trait EventStore {
     /// sorted in time order defined by the [descending] parameter.
     async fn events_by_move_event_struct_name(
         &self,
-        cursor: EventID,
         move_event_struct_name: &str,
+        cursor: EventID,
         limit: usize,
         descending: bool,
     ) -> Result<Vec<StoredEvent>, SuiError>;
@@ -381,8 +381,8 @@ pub trait EventStore {
     /// sorted in time order defined by the [descending] parameter.
     async fn events_by_sender(
         &self,
-        cursor: EventID,
         sender: &SuiAddress,
+        cursor: EventID,
         limit: usize,
         descending: bool,
     ) -> Result<Vec<StoredEvent>, SuiError>;
@@ -391,8 +391,8 @@ pub trait EventStore {
     /// sorted in time order defined by the [descending] parameter.
     async fn events_by_recipient(
         &self,
-        cursor: EventID,
         recipient: &Owner,
+        cursor: EventID,
         limit: usize,
         descending: bool,
     ) -> Result<Vec<StoredEvent>, SuiError>;
@@ -401,8 +401,8 @@ pub trait EventStore {
     /// sorted in time order defined by the [descending] parameter.
     async fn events_by_object(
         &self,
-        cursor: EventID,
         object: &ObjectID,
+        cursor: EventID,
         limit: usize,
         descending: bool,
     ) -> Result<Vec<StoredEvent>, SuiError>;
@@ -411,9 +411,9 @@ pub trait EventStore {
     /// [start_time, end_time), sorted in time order defined by the [descending] parameter.
     async fn event_iterator(
         &self,
-        cursor: EventID,
         start_time: u64,
         end_time: u64,
+        cursor: EventID,
         limit: usize,
         descending: bool,
     ) -> Result<Vec<StoredEvent>, SuiError>;
