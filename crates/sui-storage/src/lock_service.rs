@@ -23,7 +23,7 @@ use std::sync::Arc;
 use std::thread::JoinHandle;
 use tokio::sync::mpsc::{channel, Receiver, Sender};
 use tracing::{debug, error, info, trace, warn};
-use typed_store::rocks::{DBBatch, DBMap};
+use typed_store::rocks::{DBBatch, DBMap, DBOptions};
 use typed_store::traits::Map;
 use typed_store::traits::TypedStoreDebug;
 use typed_store_derive::DBMapUtils;
@@ -107,10 +107,10 @@ pub struct LockServiceImpl {
 }
 
 // These functions are used to initialize the DB tables
-fn transaction_lock_table_default_config() -> Options {
+fn transaction_lock_table_default_config() -> DBOptions {
     default_db_options(None, None).1
 }
-fn tx_sequence_table_default_config() -> Options {
+fn tx_sequence_table_default_config() -> DBOptions {
     default_db_options(None, None).1
 }
 

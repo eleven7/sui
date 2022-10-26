@@ -9289,9 +9289,9 @@ checksum = "cda74da7e1a664f795bb1f8a87ec406fb89a02522cf6e50620d016add6dbbf5c"
 
 [[package]]
 name = "tokio"
-version = "1.21.1"
+version = "1.21.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0020c875007ad96677dcc890298f4b942882c5d4eb7cc8f439fc3bf813dc9c95"
+checksum = "a9e03c497dc955702ba729190dc4aac6f2a0ce97f913e5b1b5912fc5039d9099"
 dependencies = [
  "autocfg",
  "bytes",
@@ -9299,7 +9299,6 @@ dependencies = [
  "memchr",
  "mio 0.8.4",
  "num_cpus",
- "once_cell",
  "parking_lot 0.12.1",
  "pin-project-lite",
  "signal-hook-registry",
@@ -9776,15 +9775,16 @@ checksum = "0685c84d5d54d1c26f7d3eb96cd41550adb97baed141a761cf335d3d33bcd0ae"
 
 [[package]]
 name = "typed-store"
-version = "0.1.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "21224c183bca74b370af8d75fcf32e0b1a98b33c56ae01248c099ec8c793c511"
+checksum = "488cc59f48a09de5398e541b3a5d0fe319a624f8f539fec02e2c91f89e1bbac2"
 dependencies = [
  "bincode",
  "collectable",
  "eyre",
  "fdlimit",
- "pre",
+ "once_cell",
+ "prometheus",
  "rocksdb",
  "serde 1.0.147",
  "tap",
@@ -9795,18 +9795,13 @@ dependencies = [
 
 [[package]]
 name = "typed-store-derive"
-version = "0.1.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "758c580e0d0c055fa619f4438aa4ca5e9f80df01c9a8a2de323d789cdc8316fa"
+checksum = "49b0f78dcf6a391c5087b884d1415a9bdd8c508f89320b8d070b3e960253568d"
 dependencies = [
- "eyre",
- "fdlimit",
- "pre",
  "proc-macro2 1.0.47",
  "quote 1.0.21",
- "rocksdb",
  "syn 1.0.103",
- "tempfile",
  "tokio",
 ]
 
